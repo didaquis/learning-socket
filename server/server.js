@@ -20,5 +20,5 @@ server.listen(port, (err) => {
 	if (err) {
 		throw new Error(err);
 	}
-	console.log(`Servidor corriendo en puerto: ${ port }`); // eslint-disable-line no-console
+	console.log(`Server running on port: ${ port }`); // eslint-disable-line no-console
 });

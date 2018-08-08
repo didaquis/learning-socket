@@ -1,11 +1,13 @@
 const socket = io(); // eslint-disable-line no-undef
 
+// Detectar conexión con el servidor
 socket.on('connect', () => {
 	console.log('Connected with server through Socket.io'); // eslint-disable-line no-console
 });
 
+// Detectar la finalización de un conexión
 socket.on('disconnect', () => {
-	console.error('Connection with server through Socket.io has been lost'); // eslint-disable-line no-console
+	console.log('Connection with server through Socket.io has been finished'); // eslint-disable-line no-console
 });
 
 

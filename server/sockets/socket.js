@@ -1,10 +1,11 @@
 const { io } = require('../server');
 
+// Crear una conexión con un cliente
 io.on('connection', (client) => {
 	console.log('Client has connected'); // eslint-disable-line no-console
 
-	client.on('disconnect', () => {
-		console.log('Client has disconnected'); // eslint-disable-line no-console
+	client.on('disconnect', (reason) => {
+		console.log('Client has disconnected. Reason: ', reason); // eslint-disable-line no-console
 	});
 
 	// Escuchando al frontend (cliente)

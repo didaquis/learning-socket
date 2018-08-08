@@ -13,7 +13,20 @@ const port = process.env.PORT || 3000;
 
 app.use(express.static(publicPath));
 
+
 let io = socketIO(server);
+
+io.on('connection', (client) => {
+	console.log('Client has connected'); // eslint-disable-line no-console
+
+	client.on('disconnect', (client) => {
+		console.log('Client has disconnected'); // eslint-disable-line no-console
+	});
+});
+
+
+
+
 
 server.listen(port, (err) => {
 	if (err) {

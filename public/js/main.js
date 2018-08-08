@@ -7,3 +7,7 @@ socket.on('connect', () => {
 socket.on('disconnect', () => {
 	console.error('Connection with server through Socket.io has been lost'); // eslint-disable-line no-console
 });
+
+
+// Enviar contenido al backend (server)
+socket.emit('firstMessage', {user: 'Anonymous', message: 'Welcome!'} );

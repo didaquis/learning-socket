@@ -19,13 +19,15 @@ let io = socketIO(server);
 io.on('connection', (client) => {
 	console.log('Client has connected'); // eslint-disable-line no-console
 
-	client.on('disconnect', (client) => {
+	client.on('disconnect', () => {
 		console.log('Client has disconnected'); // eslint-disable-line no-console
 	});
+
+	// Escuchando al frontend (cliente)
+	client.on('firstMessage', (data) =>{
+		console.log(data); // eslint-disable-line no-console
+	});
 });
-
-
-
 
 
 server.listen(port, (err) => {

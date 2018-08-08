@@ -1,4 +1,4 @@
-# Learning Socket.io:
+# Learning Socket.io
 
 This repo contain an exercise of course "Node: De cero a experto" by "Fernando Herrera". This is an exercise with basics of **Socket.io**.
 

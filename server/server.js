@@ -24,8 +24,14 @@ io.on('connection', (client) => {
 	});
 
 	// Escuchando al frontend (cliente)
-	client.on('firstMessage', (data) =>{
-		console.log(data); // eslint-disable-line no-console
+	client.on('firstMessage', (data, cb) =>{
+		console.log('firstMessage received from client: ', data); // eslint-disable-line no-console
+
+		if (data.user && data.message) {
+			cb( {status: 'success'} ); // ejecutamos el callback definido en el lado del cliente, podemos pasarle argumentos
+		} else {
+			cb( {status: 'failure'} );
+		}
 	});
 
 	// Mandando contenido al frontend (cliente)

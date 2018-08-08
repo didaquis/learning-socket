@@ -27,6 +27,9 @@ io.on('connection', (client) => {
 	client.on('firstMessage', (data) =>{
 		console.log(data); // eslint-disable-line no-console
 	});
+
+	// Mandando contenido al frontend (cliente)
+	client.emit('welcomeMessage', {user: 'Server', message: 'Welcome!'});
 });
 
 

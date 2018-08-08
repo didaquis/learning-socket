@@ -10,4 +10,9 @@ socket.on('disconnect', () => {
 
 
 // Enviar contenido al backend (server)
-socket.emit('firstMessage', {user: 'Anonymous', message: 'Welcome!'} );
+socket.emit('firstMessage', {user: 'Anonymous', message: 'Hi!'} );
+
+// Escuchar al backend (server)
+socket.on('welcomeMessage', (data) => {
+	console.log(data); // eslint-disable-line no-console
+});
